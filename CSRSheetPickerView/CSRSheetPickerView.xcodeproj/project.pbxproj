@@ -15,6 +15,7 @@
 		824C77D71E7D5D100004B2CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824C77D51E7D5D100004B2CD /* LaunchScreen.storyboard */; };
 		824C77E21E7D5D800004B2CD /* CSRPickerViewResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 824C77DF1E7D5D800004B2CD /* CSRPickerViewResource.bundle */; };
 		824C77E31E7D5D800004B2CD /* CSRSheetPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 824C77E11E7D5D800004B2CD /* CSRSheetPickView.m */; };
+		824C77EA1E7D5F360004B2CD /* UIImage+CSRCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 824C77E91E7D5F360004B2CD /* UIImage+CSRCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		824C77DF1E7D5D800004B2CD /* CSRPickerViewResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CSRPickerViewResource.bundle; sourceTree = "<group>"; };
 		824C77E01E7D5D800004B2CD /* CSRSheetPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRSheetPickView.h; sourceTree = "<group>"; };
 		824C77E11E7D5D800004B2CD /* CSRSheetPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRSheetPickView.m; sourceTree = "<group>"; };
+		824C77E81E7D5F360004B2CD /* UIImage+CSRCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CSRCategory.h"; sourceTree = "<group>"; };
+		824C77E91E7D5F360004B2CD /* UIImage+CSRCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CSRCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				824C77DF1E7D5D800004B2CD /* CSRPickerViewResource.bundle */,
 				824C77E01E7D5D800004B2CD /* CSRSheetPickView.h */,
 				824C77E11E7D5D800004B2CD /* CSRSheetPickView.m */,
+				824C77E81E7D5F360004B2CD /* UIImage+CSRCategory.h */,
+				824C77E91E7D5F360004B2CD /* UIImage+CSRCategory.m */,
 			);
 			path = CSRSheetPickerView;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824C77EA1E7D5F360004B2CD /* UIImage+CSRCategory.m in Sources */,
 				824C77E31E7D5D800004B2CD /* CSRSheetPickView.m in Sources */,
 				824C77CF1E7D5D100004B2CD /* ViewController.m in Sources */,
 				824C77CC1E7D5D100004B2CD /* AppDelegate.m in Sources */,

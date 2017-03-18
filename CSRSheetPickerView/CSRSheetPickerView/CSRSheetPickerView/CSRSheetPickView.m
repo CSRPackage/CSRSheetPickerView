@@ -11,6 +11,7 @@
 #define CSBackgroundColor [UIColor colorWithRed:210/255.0 green:214/255.0 blue:219/255.0 alpha:1.f]
 
 #import "CSRSheetPickView.h"
+#import "UIImage+CSRCategory.h"
 @interface CSRSheetPickView()<UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong,nonatomic)UIView *bgView;               //屏幕下方看不到的view
@@ -27,7 +28,7 @@
 @end
 @implementation CSRSheetPickView
 
-+(instancetype)CSRSheetStringPickerWithTitles:(NSArray *)titles Andcall:(CSRSheetPickerViewBlock)callBack
++(instancetype)csrSheetStringPickerWithTitles:(NSArray *)titles Andcall:(CSRSheetPickerViewBlock)callBack
 {
     CSRSheetPickView *pickerView = [[CSRSheetPickView alloc] initWithFrame:[UIScreen mainScreen].bounds  andTitles:titles];
     pickerView.callBack = callBack;
@@ -63,30 +64,6 @@
     [[[[UIApplication sharedApplication] delegate] window] addSubview:bgView];
     self.bgView = bgView;
     
-    //  标题
-    //    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_SIZE.width/2-75, 5, 150, 20)];
-    //    titleLabel.font = [UIFont systemFontOfSize:18];
-    //    [titleLabel setBackgroundColor:[UIColor clearColor]];
-    //    [titleLabel setTextAlignment:NSTextAlignmentCenter];
-    //    [titleLabel setText:_headTitle];
-    //    [titleLabel setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    //    [self addSubview:titleLabel];
-    //    self.titleLabel = titleLabel;
-    
-    //    //取消按钮
-    //    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    cancelButton.frame = CGRectMake(2, 5, KScreenWidth*0.2, 20);
-    //    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"取消" attributes:
-    //                                      @{ NSForegroundColorAttributeName: [UIColor grayColor],
-    //                                         NSFontAttributeName :           [UIFont systemFontOfSize:14],
-    //                                         NSUnderlineStyleAttributeName : @(NSUnderlineStyleNone) }];
-    //    [cancelButton setAttributedTitle:attrString forState:UIControlStateNormal];
-    //    cancelButton.adjustsImageWhenHighlighted = NO;
-    //    cancelButton.backgroundColor = [UIColor clearColor];
-    //    [cancelButton addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
-    //    [self addSubview:cancelButton];
-    //    self.cancelButton = cancelButton;
-    
     UIView *topView = [[UIView alloc] init];
     topView.backgroundColor = [UIColor whiteColor];
     topView.frame = CGRectMake(0, 0, SCREEN_SIZE.width, 44);
@@ -101,8 +78,7 @@
     //                                         NSUnderlineStyleAttributeName : @(NSUnderlineStyleNone) }];
     //    [upButton setAttributedTitle:attrString forState:UIControlStateNormal];
     //    upButton.adjustsImageWhenHighlighted = NO;
-    UIImage *topImage = [[UIImage imageNamed:@"icon-left-top"] imageWithTintColor:kTopViewTintColor];
-    //    topImage = [ECJiaViewUtil resizeImage:topImage toWidth:25 height:25];
+    UIImage *topImage = [[UIImage imageNamed:@"CSRPickerViewResource.bundle/icon-left-top"] imageWithTintColor:kTopViewTintColor];
     [upButton setImage:topImage forState:UIControlStateNormal];
     upButton.backgroundColor = [UIColor clearColor];
     [upButton addTarget:self action:@selector(scrollPickViewClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -118,8 +94,7 @@
     //                                         NSUnderlineStyleAttributeName : @(NSUnderlineStyleNone) }];
     //    [downButton setAttributedTitle:attrStr forState:UIControlStateNormal];
     downButton.adjustsImageWhenHighlighted = NO;
-    UIImage *bottomImage = [[UIImage imageNamed:@"icon-right-bottom"] imageWithTintColor:kTopViewTintColor];
-    //    topImage = [ECJiaViewUtil resizeImage:topImage toWidth:25 height:25];
+    UIImage *bottomImage = [[UIImage imageNamed:@"CSRPickerViewResource.bundle/icon-right-bottom"] imageWithTintColor:kTopViewTintColor];
     [downButton setImage:bottomImage forState:UIControlStateNormal];
     downButton.backgroundColor = [UIColor clearColor];
     [downButton addTarget:self action:@selector(scrollPickViewClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -191,13 +166,9 @@
 //取消按钮   确定按钮
 - (void)clicked:(UIButton *)sender
 {
-    //    if ([sender isEqual:self.cancelButton]) {
-    //        [self dismissPicker];
-    //    }else{
     if (self.callBack) {
         self.callBack(self,_backString);
     }
-    //    }
 }
 
 #pragma mark - 该方法的返回值决定该控件包含多少列
@@ -211,18 +182,9 @@
     return self.dataArray.count;
 }
 
-#pragma mark - 该方法返回的NSString将作为UIPickerView中指定列和列表项的标题文本
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    return self.dataArray[row];
-//}
-
 #pragma mark - 当用户选中UIPickerViewDataSource中指定列和列表项时激发该方法
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    //这个属性可以控制 标题栏。
-    //    self.titleLabel.text =self.dataArray[row];
-    
     _backString = self.dataArray[row];
 }
 

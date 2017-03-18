@@ -20,7 +20,7 @@ typedef void(^CSRSheetPickerViewBlock)(CSRSheetPickView *pickerView,NSString *ch
 
 
 //------单条选择器
-+(instancetype)CSRSheetStringPickerWithTitles:(NSArray *)titles Andcall:(CSRSheetPickerViewBlock)callBack;
++(instancetype)csrSheetStringPickerWithTitles:(NSArray *)titles Andcall:(CSRSheetPickerViewBlock)callBack;
 //显示
 -(void)show;
 //销毁类
