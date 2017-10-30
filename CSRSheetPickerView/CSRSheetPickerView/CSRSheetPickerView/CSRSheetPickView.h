@@ -10,6 +10,7 @@
 
 
 @interface CSRSheetPickView : UIView
+
 //回调  pickerView 回传类本身 用来做调用 销毁动作
 //     choiceString  回传选择器 选择的单个条目字符串
 typedef void(^CSRSheetPickerViewBlock)(CSRSheetPickView *pickerView,NSString *choiceString);

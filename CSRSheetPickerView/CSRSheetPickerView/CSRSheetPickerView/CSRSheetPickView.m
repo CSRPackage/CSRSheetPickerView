@@ -12,20 +12,21 @@
 
 #import "CSRSheetPickView.h"
 #import "UIImage+CSRCategory.h"
-@interface CSRSheetPickView()<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface CSRSheetPickView() <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (strong,nonatomic)UIView *bgView;               //屏幕下方看不到的view
-//@property (weak,nonatomic)UILabel *titleLabel;        //中间显示的标题lab
-@property (strong, nonatomic) UIPickerView *pickerView;
+@property (strong, nonatomic) UIView        *bgView;                //屏幕下方看不到的view
+@property (strong, nonatomic) UIPickerView  *pickerView;
+@property (strong, nonatomic) UIButton      *upButton;              /**   向上翻的按钮   */
+@property (strong, nonatomic) UIButton      *downButton;            /**   向下翻的按钮   */
+@property (strong, nonatomic) UIButton      *doneButton;
+@property (strong, nonatomic) NSArray       *dataArray;             // 用来记录传递过来的数组数据
+@property (strong, nonatomic) NSString      *headTitle;             //传递过来的标题头字符串
+@property (strong, nonatomic) NSString      *backString;            //回调的字符串
+
+//@property (weak,nonatomic)UILabel *titleLabel;                    //中间显示的标题lab
 //@property (weak,nonatomic)UIButton *cancelButton;
-@property (strong, nonatomic) UIButton *upButton;         /**   向上翻的按钮   */
-@property (strong, nonatomic) UIButton *downButton;       /**   向下翻的按钮   */
-@property (strong,nonatomic)UIButton *doneButton;
-@property (strong,nonatomic)NSArray *dataArray;         // 用来记录传递过来的数组数据
-@property (strong,nonatomic)NSString *headTitle;        //传递过来的标题头字符串
-@property (strong,nonatomic)NSString *backString;       //回调的字符串
-
 @end
+
 @implementation CSRSheetPickView
 
 +(instancetype)csrSheetStringPickerWithTitles:(NSArray *)titles Andcall:(CSRSheetPickerViewBlock)callBack
